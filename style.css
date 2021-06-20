@@ -21,7 +21,7 @@ a {
     width: 200px;
     height: 200px;
     transition: transform 250ms ease-in-out;
-    border: 10px solid;
+    border: 15px solid;
     border-radius: 10%;
 }
 
