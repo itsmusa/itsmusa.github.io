@@ -21,8 +21,6 @@ a {
     width: 200px;
     height: 200px;
     transition: transform 250ms ease-in-out;
-    border: 15px solid;
-    border-radius: 10%;
 }
 
 .container:hover {
@@ -32,6 +30,8 @@ a {
 
 .container img {
     width: 100%;
+    border: 15px solid;
+    border-radius: 10%;
 }
 
 /* lightbox */
