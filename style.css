@@ -18,19 +18,19 @@ a {
 }
 
 .container {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     transition: transform 250ms ease-in-out;
+    border-radius: 10%;
 }
 
 .container:hover {
     cursor: zoom-in;
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 .container img {
     width: 100%;
-    border: 15px solid;
     border-radius: 10%;
 }
 
