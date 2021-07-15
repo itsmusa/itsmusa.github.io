@@ -1,73 +1,117 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #1b1c1e;
+    scrollbar-width: none;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #37abcf;
+    font-family: 'Poppins', sans-serif;
 }
 
-a {
+.navigation {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#logo {
+    margin-bottom: 5px;
+}
+
+.navigation nav {
+    display: flex;
+}
+
+.navigation ul {
+    list-style-type: none;
+}
+
+.navigation li {
+    display: inline;
+    padding-right: 40px;
+}
+
+.navigation a {
     text-decoration: none;
-    color: #fff;
+    text-transform: uppercase;
 }
 
-.container {
-    width: 150px;
-    height: 150px;
-    transition: transform 250ms ease-in-out;
-    border-radius: 10%;
-}
-
-.container:hover {
-    cursor: zoom-in;
-    transform: scale(1.5);
-}
-
-.container img {
-    width: 100%;
-    border-radius: 10%;
-}
-
-/* lightbox */
-.lightbox {
-    display: none;
-    justify-content: center;
-    align-items: center;
+.menu-toggle-btn {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, .8);
+    right: 8%;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    z-index: 3;
 }
 
-.lightbox:target {
-    display: flex;
+.burger-icon {
+    width: 30px;
+    height: 3px;
+    position: fixed;
+    right: 8%;
+    margin-top: 10px;
+    z-index: 2;
 }
 
-.lightbox img {
-    width: 45%;
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: fixed;
+    background-color: #1b1c1e;
+    width: 25px;
+    height: 2.49px;
+    transition: transform 500ms;
 }
 
-/* close */
-.close {
+.burger-icon::before {
+    transform: translateY(-1px);
+}
+
+.burger-icon::after {
+    transform: translateY(4px);
+}
+
+.menu {
+    transform: translateY(-700px);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 1em;
-    margin-top: 1em;
+    transition: all 500ms;
+    z-index: 1;
 }
 
-@media (max-width: 460px) {
-    .lightbox img {
-        width: 100%;
+.menu .content {
+    text-align: center;
+    font-size: 32px;
+}
+
+.menu-toggle-btn:checked + .burger-icon::before {
+    transform: rotate(-225deg) translate(3px);
+}
+
+.menu-toggle-btn:checked + .burger-icon::after {
+    transform: rotate(45deg) translate(0, 3px);
+}
+
+.menu-toggle-btn:checked ~ .menu {
+    transform: translateY(0px);
+}
+
+@media screen and (max-width: 720px) {
+    a {
+        display: none;
     }
 }
