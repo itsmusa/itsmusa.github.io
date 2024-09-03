@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,10 +20,29 @@
             font-size: 3rem;
             text-align: center;
             color: #9370db; /* Soft purple */
+            margin-bottom: 20px;
+        }
+        .emoji-container {
+            font-size: 2rem;
+            animation: float 3s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <h1>I miss you, Buhle</h1>
+    <div class="emoji-container">
+        ❤️ 🥺 😘
+    </div>
 </body>
 </html>
