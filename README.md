@@ -10,7 +10,6 @@ This is a personal [portfolio website](https://itsmusa.github.io/) designed to s
 - Social Media links
 - Resume
 
-
 ## Technologies Used ⚙
 
 - HTML
