@@ -5,6 +5,7 @@
     --color-100: hsl(0, 0%, 100%);
     --color-lime: hsl(75, 94%, 57%);
 
+    --fs-900: 2rem;
     --fs-600: 1.5rem;
     --fs-500: 1.125rem;
     --fs-400: 1rem;
@@ -12,6 +13,7 @@
 
     --fw-700: 700;
     --fw-600: 600;
+    --fw-500: 500;
     --fw-400: 400;
     --fw-100: 100;
 }
@@ -47,6 +49,10 @@ a {
     font-weight: 600;
 }
 
+.link {
+    color: var(--color-lime);
+}
+
 img, picture {
     display: block;
     max-width: 100%;
@@ -57,6 +63,10 @@ button, input, label {
   line-height: 1;
 }
 
+hr {
+    margin-bottom: 2rem;
+}
+
 .bg-900 { background: var(--color-900); }
 .bg-700 { background: var(--color-700); }
 .bg-400 { background: var(--color-400); }
@@ -64,12 +74,14 @@ button, input, label {
 .fc-100 { color: var(--color-100); }
 .fc-lime { color: var(--color-lime); }
 
+.fs-900 { font-size: var(--fs-900); }
 .fs-600 { font-size: var(--fs-600); }
 .fs-500 { font-size: var(--fs-500); }
 .fs-400 { font-size: var(--fs-400); }
 .fs-100 { font-size: var(--fs-100); }
 
 .fw-600 { font-weight: var(--fw-600); }
+.fw-500 { font-weight: var(--fw-500); }
 .fw-400 { font-weight: var(--fw-400); }
 .fw-100 { font-weight: var(--fw-100); }
 
@@ -91,15 +103,26 @@ button, input, label {
     width: fit-content;
     max-width: 960px;
     padding: 3em;
+    border-radius: 0.5rem;
 
-    & .card__list {
-        & li {
-            padding: 0.5rem 0;
-            background: var(--color-400);
+    & .card__body li {
+        padding: 0.5rem;
+        background: var(--color-400);
+        border-radius: 0.5rem;
 
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &.projects {
+        padding: 1rem;
+
+        & h1 {
+            margin-bottom: 2rem;
+        }
+        & h2 {
+            margin-bottom: 1rem;
         }
     }
 }
