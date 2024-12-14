@@ -17,7 +17,7 @@ jobs:
         run: |
           curl -H "Authorization: token $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/users/YOUR_USERNAME/events \
+          https://api.github.com/users/itsmusa/events \
           > data.json
 
       - name: Commit and push updates
