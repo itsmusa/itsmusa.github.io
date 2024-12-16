@@ -17,6 +17,8 @@ jobs:
                     node-version:   '16'
             -   name:   Run script
                 run:    node activity.js
+            -   name:   Pull latest changes
+                run:    git pull
             -   name:   Push to repo
                 run:    |
                         git config user.name github-actions
