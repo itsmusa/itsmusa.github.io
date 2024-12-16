@@ -1,25 +1,26 @@
-name: Update Recent Activity
-
+name: Recent Activity Events
+run-name: Fetching Recent Activity from ${{ github.actor }}
 on:
-  schedule:
-    - cron: '0 12 * * *' # Runs daily at 12:00 UTC
+    schedule:
+        -   cron:   "0 12 * * *"
 
 jobs:
-  fetch_activity:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    fetch-activity:
+        runs-on:    ubuntu-latest
 
-      - name: Fetch recent activity
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIVITY_TOKEN }}
-        run: |
-          curl -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/users/itsmusa/events \
-          > data.json
-
-      - name: Commit and push updates
-        run: |
-          git diff --exit-code data.json || (git config --global user.name "GitHub Actions Bot" && git config --global user.email "actions@github.com" && git add data.json && git commit -m "Update recent activity" && git push)
+        steps:
+            -   name:   Checkout Code
+                uses:   actions/checkout@v2
+            -   name:   Set up Node.js
+                uses:   actions/setup-node@v2
+                with:
+                    node-version:   '16'
+            -   name:   Run script
+                run:    node activity.js
+            -   name:   Push to repo
+                run:    |
+                        git config user.name github-actions
+                        git config user.email github-actions@github.com
+                        git add .
+                        git commit -m "Pushing recent events to JSON file"
+                        git push
