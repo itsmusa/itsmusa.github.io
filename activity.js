@@ -1,7 +1,5 @@
-// const fetch = require("node-fetch");
 const fs = require("fs");
 
-// Replace 'octocat' with the desired GitHub username
 const username = "itsmusa";
 const apiUrl = `https://api.github.com/users/${username}/events`;
 
@@ -36,5 +34,4 @@ async function getEvents() {
     }
 }
 
-// Fetch and log GitHub events
 getEvents();
