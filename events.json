@@ -2,6 +2,11 @@
   {
     "type": "PushEvent",
     "repo": "itsmusa/itsmusa.github.io",
+    "created": "19-12-2024 | 11:47:16"
+  },
+  {
+    "type": "PushEvent",
+    "repo": "itsmusa/itsmusa.github.io",
     "created": "17-12-2024 | 18:32:07"
   },
   {
@@ -138,11 +143,6 @@
     "type": "PushEvent",
     "repo": "itsmusa/IoT-Ventilation-Control-System",
     "created": "08-12-2024 | 09:03:03"
-  },
-  {
-    "type": "CreateEvent",
-    "repo": "itsmusa/IoT-Ventilation-Control-System",
-    "created": "08-12-2024 | 08:53:54"
   },
   {
     "type": "CreateEvent",
