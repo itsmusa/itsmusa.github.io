@@ -46,11 +46,6 @@ body {
 a {
     text-decoration: none;
     display: inline-block;
-    font-weight: 600;
-}
-
-.link {
-    color: var(--color-lime);
 }
 
 img, picture {
@@ -63,8 +58,10 @@ button, input, label {
   line-height: 1;
 }
 
-hr {
-    margin-bottom: 2rem;
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .bg-900 { background: var(--color-900); }
@@ -84,6 +81,8 @@ hr {
 .fw-500 { font-weight: var(--fw-500); }
 .fw-400 { font-weight: var(--fw-400); }
 .fw-100 { font-weight: var(--fw-100); }
+
+.ln-100 { line-height: 1.1; }
 
 .flex { display: flex; }
 .ai-c { align-items: center; }
@@ -145,4 +144,44 @@ hr {
     & .link {
         width: 100%;
     }
+}
+
+.content {
+    display: none;
+    position: fixed;
+    top: 3rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--color-700);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &.active {
+        display: block;
+    }
+
+    & .container {
+        display: grid;
+        grid-template-areas: "overlap";
+    }
+}
+
+.content__close {
+    grid-area: overlap;
+    justify-self: end;
+    z-index: 2;
+
+    & button {
+        width: 2rem;
+    }
+}
+
+.content__container {
+    grid-area: overlap;
+    z-index: 0;
 }
