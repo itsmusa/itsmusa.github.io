@@ -16,6 +16,7 @@ fetch("../projects.json").then(response => {
     sessionStorage.setItem("projectsArray", JSON.stringify(data));
     projects = data;
     listProjects();
+    preventLinkDefault();
 }).catch(error => {
     console.error("Error: ", error)
 });
@@ -37,7 +38,6 @@ const listProjects = () => {
     projectLinks = document.querySelectorAll('[data-link]') || [];
 }
 
-
 const preventLinkDefault = () => {
     projectLinks.forEach(link => {
         link.addEventListener("click", a => {
@@ -47,7 +47,6 @@ const preventLinkDefault = () => {
         })
     });
 }
-preventLinkDefault();
 
 const openModal = () => {
     projectContentModal.classList.add('active')
