@@ -14,6 +14,8 @@ fetch("../projects.json").then(response => {
     return response.json();
 }).then(data => {
     sessionStorage.setItem("projectsArray", JSON.stringify(data));
+    projects = data;
+    listProjects();
 }).catch(error => {
     console.error("Error: ", error)
 });
@@ -34,7 +36,7 @@ const listProjects = () => {
     })
     projectLinks = document.querySelectorAll('[data-link]') || [];
 }
-listProjects();
+
 
 const preventLinkDefault = () => {
     projectLinks.forEach(link => {
