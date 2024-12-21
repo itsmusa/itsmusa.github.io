@@ -37,15 +37,14 @@ li {
 
 body {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-rendering: optimizeSpeed;
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     color: var(--color-100);
-}
-
-a {
-    text-decoration: none;
-    display: inline-block;
+    background: var(--color-900);
 }
 
 img, picture {
@@ -58,13 +57,21 @@ button, input, label {
   line-height: 1;
 }
 
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
 button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.bg-900 { background: var(--color-900); }
+.container {
+    padding: 2rem;
+}
+
 .bg-700 { background: var(--color-700); }
 .bg-400 { background: var(--color-400); }
 
@@ -85,6 +92,7 @@ button {
 .ln-100 { line-height: 1.1; }
 
 .flex { display: flex; }
+
 .ai-c { align-items: center; }
 .jc-c { justify-content: center; }
 
@@ -93,95 +101,3 @@ button {
 .br { border-radius: 0.5rem; }
 
 .radius { border-radius: 100%;}
-
-.container {
-    min-height: 100vh;
-    padding: 2rem;
-}
-
-.card {
-    min-width: 300px;
-    width: fit-content;
-    max-width: 960px;
-    padding: 3em;
-    border-radius: 0.5rem;
-
-    & .card__header {
-        justify-items: center;
-        margin-bottom: 3.5rem;
-    }
-
-    & .header__img {
-        width: 5rem;
-        margin-bottom: 1rem;
-    }
-
-    & .card__description {
-        text-align: center;
-
-        & :not(:last-child) {
-            margin-bottom: 0.125rem;
-        }
-    }
-
-    & .card__list li {
-        padding: 0.5rem 1rem;
-        background: var(--color-400);
-        border-radius: 0.5rem;
-        text-align: center;
-        cursor: pointer;
-        transition: 0.5s ease;
-
-        &:not(:last-child) {
-            margin-bottom: 1rem;
-        }
-
-        &:hover {
-            background-color: var(--color-lime);
-        }
-    }
-
-    & .link {
-        width: 100%;
-    }
-}
-
-.content {
-    display: none;
-    position: fixed;
-    top: 3rem;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: var(--color-700);
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    overflow-y: auto;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &.active {
-        display: block;
-    }
-
-    & .container {
-        display: grid;
-        grid-template-areas: "overlap";
-    }
-}
-
-.content__close {
-    grid-area: overlap;
-    justify-self: end;
-    z-index: 2;
-
-    & button {
-        width: 2rem;
-    }
-}
-
-.content__container {
-    grid-area: overlap;
-    z-index: 0;
-}

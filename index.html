@@ -7,16 +7,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
 
         <title>Musa Magwaza</title>
     </head>
-    <body class="bg-900">
-        <div class="container | flex ai-c jc-c">
+    <body class="">
+        <main class="container">
             <div class="card | bg-700">
                 <div class="card__header | grid">
                     <div class="header__img">
-                        <img class="radius" src="./images/face.jpg" alt="">
+                        <img class="radius" src="./assets/face.jpg" alt="">
                     </div>
 
                     <div class="card__description">
@@ -27,14 +27,34 @@
                 </div>
 
                 <div class="card__body">
-                    <ul class="card__list">
-                        <li class="fs-500 fw-600"><a href="https://github.com/itsmusa" class="link fc-100">GitHub</a></li>
-                        <li class="fs-500 fw-600"><a href="https://www.linkedin.com/in/musamagwaza23/" target="_blank" class="link fc-100">LinkedIn</a></li>
-                        <li class="fs-500 fw-600"><a href="./projects.html" class="link fc-100">My Projects</a></li>
-                        <li class="fs-500 fw-600"><a href="" class="link fc-100">Resume</a></li>
+                    <ul class="list">
+                        <li class="link fw-600"><a href="" class="fc-100" data-link>About</a></li>
+                        <li class="link fw-600"><a href="./projects.html" class="fc-100">My Projects</a></li>
+                        <li class="link fw-600"><a href="https://github.com/itsmusa" class="fc-100">GitHub</a></li>
+                        <li class="link fw-600"><a href="https://www.linkedin.com/in/musamagwaza23/" target="_blank" class="fc-100">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
+        </main>
+
+        <div class="modal" id="modal">
+            <div class="modal__container">
+                <button class="modal__closeBtn" id="closeModal" onclick="closeModal()"><img src="./assets/close.png" alt=""></button>
+                <div class="modal__content" id="modalContent">
+                    <h2>About Me</h2>
+                    <br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi ea dolorem dolores similique aut eveniet repellat animi sed atque.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi ea dolorem dolores similique aut eveniet repellat animi sed atque.</p>
+                    <br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi ea dolorem dolores similique aut eveniet repellat animi sed atque.</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi ea dolorem dolores similique aut eveniet repellat animi sed atque.</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti reprehenderit perspiciatis nam iusto ullam placeat deserunt mollitia amet voluptatibus laboriosam? Quo architecto nihil fuga tempore voluptas officiis voluptatum culpa iusto!</p>
+                </div>
+            </div>
         </div>
+
+        <script src="./js/index.js"></script>
+        <script src="./js/modal.js"></script>
     </body>
 </html>

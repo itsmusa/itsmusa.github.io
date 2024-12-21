@@ -1,0 +1,37 @@
+.modal {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+    background: var(--color-700);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: all 250ms ease-in-out;
+    z-index: 0;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal__container {
+    display: grid;
+    grid-template-areas: "overlap";
+    padding: 2rem;
+}
+
+.modal__closeBtn {
+    width: 1.5rem;
+    grid-area: overlap;
+    justify-self: end;
+    align-self: start;
+    z-index: 2;
+}
+
+.modal__content {
+    min-height: 100%;
+    margin-top: 1rem;
+    grid-area: overlap;
+    z-index: 1;
+}

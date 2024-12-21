@@ -1,7 +1,7 @@
 const cardList = document.getElementById("card-list");
-const projectContentModal = document.getElementById("content");
+const projectContentModal = document.getElementById("modal");
 
-let projectContentContainer = document.getElementById('content-container');
+let projectContentContainer = document.getElementById('modalContent');
 let projectLinks = [];
 let projects = [];
 
@@ -27,10 +27,10 @@ const listProjects = () => {
     cardList.innerHTML = "";
     projects.forEach(project => {
         let projectLi = document.createElement("li");
-        projectLi.classList.add('fs-400', 'fw-400', 'ln-100');
+        projectLi.classList.add('link', 'fw-400', 'fs-400');
 
         projectLi.innerHTML = `
-        <a href="${project["link"]}" class="link fc-100" data-link>${project["title"]}</a>
+        <a href="${project["link"]}" class="fc-100" data-link>${project["title"]}</a>
         `;
 
         cardList.appendChild(projectLi);
@@ -49,14 +49,8 @@ const preventLinkDefault = () => {
 }
 
 const openModal = () => {
-    projectContentModal.classList.add('active')
+    projectContentModal.classList.add('active');
 }
-
-const closeModal = () => {
-    projectContentModal.classList.remove('active');
-    projectContentContainer.innerHTML = "";
-}
-document.getElementById('closeModal').addEventListener('click', closeModal);
 
 async function fillContent(url) {
     try {
