@@ -5,8 +5,8 @@
     width: 100%;
     min-height: calc(100vh - 2rem);
     background: var(--color-700);
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
     transition: all 250ms ease-in-out;
     z-index: 0;
 }
@@ -30,8 +30,10 @@
 }
 
 .modal__content {
+    max-width: 90ch;
     min-height: 100%;
-    margin-top: 1rem;
+    justify-self: center;
+    margin-top: 2rem;
     grid-area: overlap;
     z-index: 1;
 }
