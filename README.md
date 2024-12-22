@@ -24,7 +24,7 @@ For any inquiries, feedback, or collaboration opportunities, please feel free to
 
 ## Screenshot 📸
 
-![](/assets/image.png)
+![](/images/image.png)
 
 ## License 📄
 
