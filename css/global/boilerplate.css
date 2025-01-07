@@ -18,6 +18,11 @@
     --fw-100: 100;
 }
 
+::selection {
+    color: var(--color-400);
+    background-color: var(--color-lime);
+}
+
 *,
 *::before,
 *::after {

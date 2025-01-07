@@ -11,6 +11,27 @@
     z-index: 0;
 }
 
+.href {
+    color: var(--color-lime);
+}
+
+.modal h2 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.dotted-list {
+    margin-left: 2.5rem;
+}
+
+.dotted-list li {
+    list-style-type: disc;
+}
+
+.dotted-list li:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
 .modal.active {
     display: block;
 }
@@ -36,4 +57,17 @@
     margin-top: 2rem;
     grid-area: overlap;
     z-index: 1;
+}
+
+.modal .socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socials svg {
+    max-width: 25px;
+}
+
+.socials li:hover path {
+    fill: var(--color-lime);
 }
