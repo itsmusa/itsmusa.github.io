@@ -2,100 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>I'm Sorry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Under Construction</title>
+  <meta name="description" content="Under construction — personal page" />
   <style>
     :root{
-      --bg1: #fff8fb;
-      --bg2: #f3f8ff;
-      --accent: #ff7a9a;
-      --muted: #6b6b75;
-      --card: rgba(255,255,255,0.85);
-      --glass: rgba(255,255,255,0.6);
+      --bg:#0b1020;
+      --card:#071022;
+      --muted:#9fb0c8;
+      --accent:#00d0c8;
+      --accent-2:#7ef59a;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --ff: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif}
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      background: radial-gradient(1200px 600px at 10% 20%, var(--bg1), transparent 20%),
-                  radial-gradient(1000px 500px at 90% 80%, var(--bg2), transparent 20%),
-                  linear-gradient(135deg,#fff 0%, #fbfbff 100%);
-      display:flex;align-items:center;justify-content:center;padding:32px;
+      margin:40px 0 80px 0;
+      font-family:var(--ff);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,208,200,0.06), transparent),
+                  radial-gradient(900px 500px at 90% 90%, rgba(126,245,154,0.03), transparent),
+                  var(--bg);
+      color: #e6f0f6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:32px;
     }
-    .container{
-      width:100%;max-width:720px;padding:28px;border-radius:20px;backdrop-filter:blur(6px);
-      box-shadow:0 10px 30px rgba(20,24,40,0.12);
-      background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.72));
-      border:1px solid rgba(200,200,210,0.35);
-      transition:all 0.3s ease-in-out;
-    }
-    .header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;text-align:center}
-    .seal{
-      width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:28px;
-      background:conic-gradient(from 210deg at 50% 50%, rgba(255,122,154,0.12), rgba(255,186,200,0.08));
-      border:2px solid rgba(255,122,154,0.18);
-    }
-    .seal .heart{font-size:28px;color:var(--accent)}
-    h1{font-family:'Playfair Display', serif;font-size:28px;color:#2b2b33}
-    p.lead{margin:8px 0 20px;color:var(--muted);line-height:1.45}
+
     .card{
-      padding:22px;border-radius:14px;background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
-      border:1px solid rgba(200,200,210,0.45);
-    }
-    .message{white-space:pre-wrap;font-size:16px;color:#2b2b33;line-height:1.6}
-    .signature{margin-top:18px;font-weight:600;color:#1f1f26}
-    .small{font-size:13px;color:var(--muted);margin-top:12px}
-
-    /* subtle heart animation */
-    @keyframes beat{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
-    .heart-ani{display:inline-block;transform-origin:center center;animation:beat 1.4s ease-in-out infinite}
-
-    /* responsive */
-    @media (max-width:768px){
-      .container{padding:20px;border-radius:14px}
-      h1{font-size:24px}
-      .message{font-size:15px}
+      width:min(600px, 96%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding: clamp(20px, 4.5vw, 48px);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px) saturate(120%);
     }
 
-    @media (max-width:480px){
-      body{padding:16px}
-      .container{padding:16px;border-radius:10px}
-      h1{font-size:20px}
-      .lead{font-size:14px}
-      .message{font-size:14px}
+    h1{
+      margin:0 0 8px 0;
+      font-size: clamp(24px, 5vw, 40px);
+      letter-spacing: -0.02em;
+      color: white;
     }
 
-    /* print */
-    @media print{
-      body{background:white}
-      .container{box-shadow:none;border:0}
+    .small-muted{ color:var(--muted); font-size:15px; margin-bottom:20px; }
+
+    p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size: clamp(13px, 1.6vw, 16px);
+      line-height:1.5;
+      max-width:600px;
     }
+
+    .progress-container {
+      width:100%;
+      background: rgba(255,255,255,0.05);
+      border-radius:999px;
+      height:12px;
+      overflow:hidden;
+      margin:20px 0;
+      border:1px solid rgba(255,255,255,0.08);
+      position:relative;
+    }
+
+    .progress-bar {
+      width:40%;
+      height:100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      animation: progressMove 2.5s linear infinite;
+      border-radius:999px;
+    }
+
+    @keyframes progressMove {
+      0% {transform:translateX(-100%)}
+      50% {transform:translateX(0%)}
+      100% {transform:translateX(100%)}
+    }
+
+    .cta{ display:inline-flex; gap:8px; align-items:center; text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:600;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04);
+      color:var(--accent); }
+
+    footer{ margin-top:18px; color:var(--muted); font-size:13px }
   </style>
 </head>
 <body>
-  <section class="container" aria-labelledby="apology-title">
-    <header class="header">
-      <div class="seal" aria-hidden="true"><span class="heart">❤</span></div>
-      <div>
-        <h1 id="apology-title">I am so sorry 😔</h1>
-        <p class="lead"></p>
-      </div>
-    </header>
+  <main class="card" role="main" aria-labelledby="title">
+    <h1 id="title">Under Construction</h1>
+    <div class="small-muted">Musa Magwaza</div>
 
-    <div class="card" role="article" aria-label="Apology message">
-      <div class="message">I’m so sorry for what happened. It was never my intention to keep those old photos. I honestly thought I had deleted everything, but I must have missed them. Please believe me when I say they mean nothing to me. You’re the only one I want and love.
+    <p class="lead">Thanks for stopping by — I'm building a portfolio and some projects. In the meantime you can connect with me on LinkedIn or check back soon for projects, schematics and reports.</p>
 
-Being with you has changed my life. You make me feel things I haven’t felt in a long time, like hope, excitement, and purpose. I know I’m not perfect and I’ve made mistakes, but I’m trying every day to be better because I want a future with you. My dreams now include you in everything.
-
-I’m truly sorry for hurting you. I hope you can forgive me.
-
-I’m really sorry Thembisile. I don’t want to lose you.
-
-With love,
-Musa</div>
-
-      <div class="signature">— Always</div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
     </div>
-  </section>
+
+    <a class="cta" href="https://www.linkedin.com/in/musamagwaza23" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in new tab">View LinkedIn</a>
+
+    <footer>
+      <div>By Musa Magwaza</div>
+    </footer>
+  </main>
 </body>
 </html>
