@@ -2,12 +2,14 @@
   {
     "id": 1,
     "title": "IoT Ventilation System",
+    "image": "",
     "description": "A smart system to control air pressure and quality.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
   },
   {
     "id": 2,
     "title": "This personal Portfolio",
+    "image": "",
     "description": "Another amazing project.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
   }
