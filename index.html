@@ -1,118 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Under Construction</title>
-  <meta name="description" content="Under construction — personal page" />
-  <style>
-    :root{
-      --bg:#0b1020;
-      --card:#071022;
-      --muted:#9fb0c8;
-      --accent:#00d0c8;
-      --accent-2:#7ef59a;
-      --glass: rgba(255,255,255,0.04);
-      --radius:16px;
-      --ff: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Msawenkosi Magwaza</title>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:40px 0 80px 0;
-      font-family:var(--ff);
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,208,200,0.06), transparent),
-                  radial-gradient(900px 500px at 90% 90%, rgba(126,245,154,0.03), transparent),
-                  var(--bg);
-      color: #e6f0f6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:32px;
-    }
-
-    .card{
-      width:min(600px, 96%);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding: clamp(20px, 4.5vw, 48px);
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      border:1px solid rgba(255,255,255,0.03);
-      backdrop-filter: blur(6px) saturate(120%);
-    }
-
-    h1{
-      margin:0 0 8px 0;
-      font-size: clamp(24px, 5vw, 40px);
-      letter-spacing: -0.02em;
-      color: white;
-    }
-
-    .small-muted{ color:var(--muted); font-size:15px; margin-bottom:20px; }
-
-    p.lead{
-      margin:0 0 18px 0;
-      color:var(--muted);
-      font-size: clamp(13px, 1.6vw, 16px);
-      line-height:1.5;
-      max-width:600px;
-    }
-
-    .progress-container {
-      width:100%;
-      background: rgba(255,255,255,0.05);
-      border-radius:999px;
-      height:12px;
-      overflow:hidden;
-      margin:20px 0;
-      border:1px solid rgba(255,255,255,0.08);
-      position:relative;
-    }
-
-    .progress-bar {
-      width:40%;
-      height:100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      animation: progressMove 2.5s linear infinite;
-      border-radius:999px;
-    }
-
-    @keyframes progressMove {
-      0% {transform:translateX(-100%)}
-      50% {transform:translateX(0%)}
-      100% {transform:translateX(100%)}
-    }
-
-    .cta{ display:inline-flex; gap:8px; align-items:center; text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:600;
-      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04);
-      color:var(--accent); }
-
-    footer{ margin-top:18px; color:var(--muted); font-size:13px }
-  </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main class="card" role="main" aria-labelledby="title">
-    <h1 id="title">Under Construction</h1>
-    <div class="small-muted">Musa Magwaza</div>
 
-    <p class="lead">Thanks for stopping by — I'm building a portfolio and some projects. In the meantime you can connect with me on LinkedIn or check back soon for projects, schematics and reports.</p>
+    <header class="wrap">
+        <!-- Navigation Bar -->
+        <nav class="nav">
+            <a href="#home" class="logo">musa</a>
+            <button class="nav__menuBtn openMenu" id="openMenu">menu</button>
+            <ul class="nav__menu" id="navMenu">
+                <button class="nav__menuBtn closeMenu" id="closeMenu">close</button>
+                <li><a href="#info">Information</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
+    <!-- Main Container where views are rendered -->
+    <div id="app"></div>
 
-    <a class="cta" href="https://www.linkedin.com/in/musamagwaza23" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile in new tab">View LinkedIn</a>
+    <!-- Main Application Script (Type module allows imports) -->
+    <script type="module" src="js/app.js"></script>
 
-    <footer>
-      <div>By Musa Magwaza</div>
-    </footer>
-  </main>
 </body>
 </html>
