@@ -1,14 +1,14 @@
 [
-    {
-        "title": "IoT ventilation control system",
-        "link": "https://itsmusa.github.io/IoT-Ventilation-Control-System/README.md"
-    },
-    {
-        "title": "Personal Portfolio Website",
-        "link": "https://itsmusa.github.io/README.md"
-    },
-    {
-        "title": "Url Shortening API",
-        "link": "https://itsmusa.github.io/url-shortening-api/README.md"
-    }
+  {
+    "id": 1,
+    "title": "IoT Ventilation System",
+    "description": "A smart system to control air pressure and quality.",
+    "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
+  },
+  {
+    "id": 2,
+    "title": "This personal Portfolio",
+    "description": "Another amazing project.",
+    "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
+  }
 ]
