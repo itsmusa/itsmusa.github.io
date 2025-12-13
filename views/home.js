@@ -27,7 +27,7 @@ export default function home() {
 
             <section class="achievements wrap">
                 <h2>Recent Achievements</h2>
-                <ul class="achievements__list>
+                <ul class="achievements__list">
                     <li>
                         <p class="achievement__title">Winner - 2025 SATNAC Huawei Topic</p>
                         <p class="achievement__date">Novermber, 2025</p>
@@ -53,3 +53,4 @@ window.loadProjectDetail = (url) => {
     // Navigate to the detail view
     window.location.hash = '#project-detail';
 };
+
