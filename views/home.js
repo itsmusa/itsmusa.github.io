@@ -3,7 +3,7 @@ export default function home() {
         <main class="view-home">
             <section class="intro wrap">
                 <h1>Hi, my name is Msawenkosi</h1>
-                <h3>A hybrid Electronics and Computer Engineering graduate based in Durban.</h3>
+                <h3>An Electronics and Computer Engineering graduate based in Durban.</h3>
                 <p>I build practical electronic and software solutions that solve real problems. I recently completed my BEngTech in Electronics and Computer Engineering, where I worked on projects that mixed hardware, coding, and creative design. I have competed in major hackathons and technical challenges, earning awards along the way.</p>
                 <a href="#info" class="btn-pill">More Information <span class="arrow">&rarr;</span></a>
             </section>

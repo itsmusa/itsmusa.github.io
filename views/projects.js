@@ -10,23 +10,22 @@ export default async function projects() {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <!-- We add a button that triggers a function to save the URL and navigate -->
-                <button onclick="window.loadProjectDetail('${project.readmeUrl}')">
-                    View Project Details
+                <button class="btn-pill ltn" onclick="window.loadProjectDetail('${project.readmeUrl}')">
+                    View Details <span class="arrow">&rarr;</span>
                 </button>
-                <hr>
             </div>
         `).join('');
 
         return `
-            <div class="view-projects">
+            <main class="view-projects wrap">
                 <h1>Projects List</h1>
+
+                <div class="line"></div>
+
                 <div class="projects-container">
                     ${listHtml}
                 </div>
-                <div class="comments-section">
-                    <!-- Future project list comments -->
-                </div>
-            </div>
+            </main>
         `;
     } catch (error) {
         return `<h1>Error loading projects.</h1><p>${error.message}</p>`;
