@@ -93,9 +93,10 @@ button {
   padding-right: 1.5rem;
   max-width: 576px;
 
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: 720px) {
+    max-width: 650px;
     padding-left: 0;
-  padding-right: 0;
+    padding-right: 0;
   }
 }
 
@@ -119,9 +120,10 @@ h3 {
   font-weight: 500;
   color: #62748e;
 }
+
 .btn-pill {
   font-size: 0.75em;
-  font-weight: 100;
+  font-weight: 400;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -213,9 +215,42 @@ h3 {
 }
 /* HEADER */
 
+/* INTRO */
+.intro {
+  margin-bottom: 3rem;
+
+  h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+/* INTRO */
+
 /* PROJECTS */
 .projects {
   margin-bottom: 3rem;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.projects__list {
+  @media only screen and (min-width: 720px) {
+    width: min(900px, 100vw - 2rem);
+    margin-left: calc(50% - min(450px, 50vw - 1rem));
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
 .project__card {
@@ -249,7 +284,25 @@ h3 {
 /* PROJECTS */
 
 /* ACHIEVEMENTS */
+.achievements {
+  h2 {
+    margin-bottom: 2rem;
+  }
 
+  li {
+    margin-bottom: 1rem;
+  }
+
+  .achievement__title {
+    font-weight: 600;
+    color: #020618;
+  }
+
+  .achievement__date {
+    font-size: .875em;
+    color: #2f3f55;
+  }
+}
 /* ACHIEVEMENTS */
 
 /* FOOTER */
