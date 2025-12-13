@@ -53,4 +53,3 @@ window.loadProjectDetail = (url) => {
     // Navigate to the detail view
     window.location.hash = '#project-detail';
 };
-

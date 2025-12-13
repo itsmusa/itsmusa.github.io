@@ -32,7 +32,7 @@ body {
   font-family: var(--font-main);
   background: #f8fafc;
   color: #020618;
-  font-size: 18px;
+  font-size: 12pt;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -316,3 +316,129 @@ footer {
   padding-bottom: 3rem;
 }
 /* FOOTER */
+
+/* INFORMATION */
+.view-info {
+  display: grid;
+  grid-template-areas: "info"
+                        "experience"
+                        "skills";
+  gap: 3rem;
+  margin-bottom: 3rem;
+
+}
+
+.info {
+  grid-area: info;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .line {
+    margin-bottom: 2rem;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.experience {
+  grid-area: experience;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .experience__item {
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "image info";
+    gap: .5rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e7e9;
+    }
+
+    img {
+      width: 55px;
+      border-radius: 10px;
+      grid-area: image;
+    }
+
+    .experience__details {
+      grid-area: info;
+    }
+  }
+
+  .experience__title {
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+  .experience__role {
+    font-size: 0.875em;
+    color: #2f3f55;
+  }
+
+  .experience__date {
+    font-size: 0.875em;
+    color: #2f3f55;
+  }
+}
+/* INFORMATION */
+
+/* SKILLS */
+.skills {
+  grid-area: skills;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.skills__item {
+  max-width: 350px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: "image info";
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7e9;
+  }
+
+  .skill__icon {
+    grid-area: image;;
+    width: 55px;
+    height: 55px;
+    background: #FF4500;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill__details {
+    grid-area: info;
+
+    .skill__title {
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+
+    .skill_desc {
+      font-size: 0.875em;
+      color: #2f3f55;
+    }
+  }
+}
+/* SKILLS */
