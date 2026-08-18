@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Msawenkosi Magwaza</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <header class="wrap">
+        <!-- Navigation Bar -->
+        <nav class="nav">
+            <a href="#home" class="logo">musa</a>
+            <button class="nav__menuBtn openMenu" id="openMenu">menu</button>
+            <ul class="nav__menu" id="navMenu">
+                <button class="nav__menuBtn closeMenu" id="closeMenu">close</button>
+                <li><a href="#info">Information</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container where views are rendered -->
+    <div id="app"></div>
+
+    <div class="line wrap"></div>
+
+    <footer class="wrap">
+        <p>© 2025 / Msawenkosi Magwaza</P>
+        <a href="" target="_blank">Source Code</P>
+    </footer>
+
+    <!-- Main Application Script (Type module allows imports) -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
