@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "iot-ventilation-system",
     "title": "IoT Ventilation System",
     "image": "",
     "description": "A smart system to control air pressure and quality.",
@@ -8,9 +9,26 @@
   },
   {
     "id": 2,
+    "slug": "portfolio",
     "title": "This personal Portfolio",
     "image": "",
-    "description": "Another amazing project.",
+    "description": "A responsive, single-page portfolio built with vanilla JavaScript.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/itsmusa.github.io/main/README.md"
+  },
+  {
+    "id": 3,
+    "slug": "rl-mppt-hil-validation",
+    "title": "Reinforcement Learning MPPT HIL-Validation",
+    "image": "",
+    "description": "Partial shading reduces photovoltaic array output by up to 60% when conventional maximum power point tracking (MPPT) algorithms converge on local maxima rather than the global maximum power point (GMPP). This repository implements a dual Q-learning MPPT agent trained system-agnostically across randomised panel configurations, irradiance patterns, and temperatures, targeting embedded deployment on the STM32F411 microcontroller (512 KB flash). The system is validated against Incremental Conductance (INC), Perturb and Observe (P&O), and Deep Q-Network (DQN) baselines using multi-seed statistical testing with toolbox-free paired t-tests and Wilcoxon signed-rank tests.",
+    "readmeUrl": "https://raw.githubusercontent.com/itsmusa/Reinforcement-Learning-MPPT-HIL-Validation/refs/heads/master/README.md"
+  },
+  {
+    "id": 4,
+    "slug": "news-homepage",
+    "title": "Frontend Mentor - News homepage solution",
+    "image": "",
+    "description": "This is a solution to the News homepage challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+    "readmeUrl": "https://raw.githubusercontent.com/itsmusa/News-homepage/refs/heads/main/README.md"
   }
 ]

@@ -1,36 +1,65 @@
-# Musa Magwaza 
+# Portfolio by Msawenkosi Magwaza
 
-This is a personal [portfolio website](https://itsmusa.github.io/) designed to showcase my skills, projects, and professional journey. It serves as an online presence where visitors can learn about my expertise, view my work, and contact me for opportunities.
+A minimal, single-page portfolio built with vanilla JavaScript. Designed to showcase skills, projects, and professional journey through a clean, editorial阅读体验.
 
-## Features 🚀
+**[Live Site](https://itsmusa.github.io/)**
 
-- Minimal Design
-- Responsive Design
-- Projects
-- Social Media links
-- Resume
+---
 
-## Technologies Used ⚙
+## Features
 
-- HTML
-- CSS
-- JavaScript
-- Git & Github Pages
-- Github Actions
+- Single-page application with hash-based routing
+- Skeleton loaders and scroll-reveal animations
+- Lazy-loaded images and async markdown rendering
+- Fully responsive across all screen sizes
+- Accessible (keyboard navigation, focus management, reduced motion support)
 
-## Contact 📬
+## Tech Stack
 
-For any inquiries, feedback, or collaboration opportunities, please feel free to reach out to me through my [email]() or [LinkedIn](https://www.linkedin.com/in/musamagwaza23/).
+- HTML5
+- CSS3 (custom properties, fluid typography, clamp())
+- Vanilla JavaScript (ES modules)
+- Marked.js (markdown parsing)
+- GitHub Pages + GitHub Actions
 
-## Screenshot 📸
+## Getting Started
 
-![](/images/image.png)
+1. Clone the repository
 
-## License 📄
+```sh
+git clone https://github.com/itsmusa/itsmusa.github.io.git
+```
 
-The project is available as open source under the terms of the [MIT License](https://github.com/itsmusa/itsmusa.github.io/blob/main/LICENSE).
+2. Open `index.html` in your browser
 
-## Links
+No build tools or dependencies required.
 
-- [source code](https://github.com/itsmusa/itsmusa.github.io)
-- [Live Site](https://itsmusa.github.io/)
+## Project Structure
+
+```
+.
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   └── router.js
+├── views/
+│   ├── home.js
+│   ├── info.js
+│   ├── projects.js
+│   ├── project-detail.js
+│   ├── contact.js
+│   └── 404.js
+├── images/
+└── projects.json
+```
+
+## Contact
+
+- **GitHub:** [itsmusa](https://github.com/itsmusa)
+- **LinkedIn:** [musamagwaza23](https://www.linkedin.com/in/musamagwaza23/)
+
+## License
+
+Released under the [MIT License](https://github.com/itsmusa/itsmusa.github.io/blob/main/LICENSE).
