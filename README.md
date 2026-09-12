@@ -1,6 +1,6 @@
 # Portfolio by Msawenkosi Magwaza
 
-A minimal, single-page portfolio built with vanilla JavaScript. Designed to showcase skills, projects, and professional journey through a clean, editorial阅读体验.
+A minimal, single-page portfolio built with vanilla JavaScript. Designed to showcase skills, projects, and professional journey through a clean, editorial reading experience.
 
 **[Live Site](https://itsmusa.github.io/)**
 

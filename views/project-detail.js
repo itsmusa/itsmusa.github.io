@@ -38,6 +38,12 @@ function fixRelativeUrls(html, readmeUrl) {
       prefix + base + href.replace(/^\.\//, ''));
 }
 
+/* The README usually opens with its own <h1>, which would duplicate the
+   title we render in the project header. Drop that first heading. */
+function stripLeadingHeading(html) {
+  return html.replace(/^\s*<h1[^>]*>[\s\S]*?<\/h1>\s*/i, '');
+}
+
 export default async function projectDetail({ slug }) {
   try {
     const [projects, marked] = await Promise.all([
@@ -48,7 +54,12 @@ export default async function projectDetail({ slug }) {
     const project = projects.find(p => p.slug === slug);
 
     if (!project) {
-      return `<main class="view-project-detail wrap" data-reveal><h1>Project not found.</h1><p><a href="#projects">Back to Projects</a></p></main>`;
+      return `
+        <div class="view-project-detail wrap" data-reveal>
+          <a href="#projects" class="back-link">&larr; Back to Projects</a>
+          <h1>Project not found.</h1>
+          <p>That project does not exist or may have been removed.</p>
+        </div>`;
     }
 
     const response = await fetch(project.readmeUrl);
@@ -56,17 +67,29 @@ export default async function projectDetail({ slug }) {
 
     const textData = await response.text();
     let htmlContent = marked ? marked.parse(textData) : textData;
+    htmlContent = stripLeadingHeading(htmlContent);
     htmlContent = fixRelativeUrls(htmlContent, project.readmeUrl);
 
     return `
-      <main class="view-project-detail wrap">
+      <div class="view-project-detail wrap">
+        <a href="#projects" class="back-link">&larr; Back to Projects</a>
+        <header class="project-detail__header" data-reveal>
+          <h1>${project.title}</h1>
+          <p class="project-detail__lead">${project.description}</p>
+        </header>
+        <div class="line"></div>
         <div class="readme-content">${htmlContent}</div>
-        <div style="margin-top: 2rem;">
-          <a href="#projects" class="btn-pill ltn">Back to Projects <span class="arrow">&larr;</span></a>
+        <div class="project-detail__footer">
+          <a href="#projects" class="btn-pill ltn">&larr; Back to Projects</a>
         </div>
-      </main>
+      </div>
     `;
   } catch (error) {
-    return `<main class="view-project-detail wrap" data-reveal><h1>Error loading details</h1><p>${error.message}</p></main>`;
+    return `
+      <div class="view-project-detail wrap" data-reveal>
+        <a href="#projects" class="back-link">&larr; Back to Projects</a>
+        <h1>Error loading details</h1>
+        <p>${error.message}</p>
+      </div>`;
   }
 }

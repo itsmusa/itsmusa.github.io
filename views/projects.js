@@ -18,13 +18,13 @@ export default async function projects() {
       .join('');
 
     return `
-      <main class="view-projects wrap">
+      <div class="view-projects wrap">
         <h1 data-reveal>Projects</h1>
         <div class="line"></div>
         <div class="projects-container">
           ${listHtml}
         </div>
-      </main>
+      </div>
     `;
   } catch {
     return `<h1>Error loading projects.</h1>`;

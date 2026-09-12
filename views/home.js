@@ -21,7 +21,7 @@ function shuffle(arr) {
 function projectCard(p) {
   return `
     <a href="#project/${p.slug}" class="project__card">
-      <img src="${pickThumb()}" class="project__image" alt="${p.title}" width="400" height="200" loading="lazy">
+      <img src="${pickThumb()}" class="project__image" alt="${p.title}" width="400" height="400" loading="lazy">
       <p class="project__title">${p.title}</p>
       <p class="project__description">${p.description}</p>
     </a>
@@ -36,11 +36,11 @@ export default async function home() {
     const cards = shuffle(projects).slice(0, 2).map(projectCard).join('');
 
     return `
-      <main class="view-home">
+      <div class="view-home">
         <section class="intro wrap" data-reveal>
           <h1>Hi, my name is Msawenkosi</h1>
-          <h3>An Electronics and Computer Engineering graduate based in Durban.</h3>
-          <p>I build practical electronic and software solutions that solve real problems. I recently completed my BEngTech in Electronics and Computer Engineering, where I worked on projects that mixed hardware, coding, and creative design. I have competed in major hackathons and technical challenges, earning awards along the way.</p>
+          <h3>Electronics, embedded software, and a habit of finishing what I start.</h3>
+          <p>I am drawn to the moment an idea stops being abstract and starts working. My BEngTech in Electronics and Computer Engineering was built around that moment, and every competition since has pushed me toward a harder version of it.</p>
           <a href="#info" class="btn-pill">More Information <span class="arrow">&rarr;</span></a>
         </section>
 
@@ -56,6 +56,10 @@ export default async function home() {
           <h2>Recent Achievements</h2>
           <ul class="achievements__list">
             <li class="achievement__item">
+              <p class="achievement__title">Winner - 2026 TCS Sustainathon South Africa</p>
+              <p class="achievement__date">September, 2026</p>
+            </li>
+            <li class="achievement__item">
               <p class="achievement__title">Winner - 2025 SATNAC Huawei Topic</p>
               <p class="achievement__date">November, 2025</p>
             </li>
@@ -69,9 +73,9 @@ export default async function home() {
             </li>
           </ul>
         </section>
-      </main>
+      </div>
     `;
   } catch {
-    return `<main class="view-home wrap"><p>Failed to load projects. Please refresh.</p></main>`;
+    return `<div class="view-home wrap"><p>Failed to load projects. Please refresh.</p></div>`;
   }
 }

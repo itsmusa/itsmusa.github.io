@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Msawenkosi Magwaza</title>
+    <title>Msawenkosi Magwaza — Electronics &amp; Computer Engineer</title>
 
+    <meta name="description" content="Msawenkosi Magwaza is an Electronics and Computer Engineering graduate based in Durban, building practical hardware and software solutions.">
+    <meta name="author" content="Msawenkosi Magwaza">
+    <meta name="theme-color" content="#fcfcfc">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Msawenkosi Magwaza — Electronics &amp; Computer Engineer">
+    <meta property="og:description" content="Portfolio of Msawenkosi Magwaza: electronics, embedded systems and software projects.">
+    <meta property="og:url" content="https://itsmusa.github.io/">
+    <meta property="og:image" content="https://itsmusa.github.io/images/thumb-1.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Msawenkosi Magwaza — Electronics &amp; Computer Engineer">
+    <meta name="twitter:description" content="Portfolio of Msawenkosi Magwaza: electronics, embedded systems and software projects.">
+    <meta name="twitter:image" content="https://itsmusa.github.io/images/thumb-1.jpg">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <a href="#app" class="skip-link">Skip to content</a>
 
     <header class="site-header wrap">
         <nav class="nav" aria-label="Main navigation">
             <a href="#home" class="logo" aria-label="Home">musa</a>
             <button class="nav__menuBtn openMenu" id="openMenu" aria-expanded="false" aria-controls="navMenu">menu</button>
-            <ul class="nav__menu" id="navMenu" role="list">
+            <ul class="nav__menu" id="navMenu">
                 <li class="nav__menuClose">
                     <button class="nav__menuBtn closeMenu" id="closeMenu" aria-label="Close menu">close</button>
                 </li>
@@ -24,14 +42,16 @@
         </nav>
     </header>
 
-    <main id="app" aria-live="polite"></main>
+    <main id="app" aria-busy="false"></main>
 
     <div class="divider wrap" aria-hidden="true"></div>
 
     <footer class="site-footer wrap">
-        <p>&copy; 2025 / Msawenkosi Magwaza</p>
+        <p>&copy; <span id="year">2026</span> / Msawenkosi Magwaza</p>
         <a href="https://github.com/itsmusa/itsmusa.github.io" target="_blank" rel="noopener noreferrer">Source Code</a>
     </footer>
+
+    <p id="routeAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></p>
 
     <script type="module" src="js/app.js"></script>
 
