@@ -20,19 +20,7 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 - CSS3 (custom properties, fluid typography, clamp())
 - Vanilla JavaScript (ES modules)
 - Marked.js (markdown parsing)
-- GitHub Pages + GitHub Actions
-
-## Getting Started
-
-1. Clone the repository
-
-```sh
-git clone https://github.com/itsmusa/itsmusa.github.io.git
-```
-
-2. Open `index.html` in your browser
-
-No build tools or dependencies required.
+- GitHub Pages
 
 ## Project Structure
 
@@ -52,7 +40,10 @@ No build tools or dependencies required.
 │   ├── contact.js
 │   └── 404.js
 ├── images/
-└── projects.json
+├── projects.json
+├── favicon.svg
+├── .nojekyll
+└── LICENSE
 ```
 
 ## Contact
