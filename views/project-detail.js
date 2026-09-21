@@ -1,12 +1,4 @@
-let projectsCache = null;
-
-async function getProjects() {
-  if (projectsCache) return projectsCache;
-  const res = await fetch('projects.json');
-  if (!res.ok) throw new Error('Failed to load projects');
-  projectsCache = await res.json();
-  return projectsCache;
-}
+import { getProjects } from '../js/data.js';
 
 let markedPromise = null;
 
@@ -44,6 +36,20 @@ function stripLeadingHeading(html) {
   return html.replace(/^\s*<h1[^>]*>[\s\S]*?<\/h1>\s*/i, '');
 }
 
+function decorateImages(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  doc.querySelectorAll('img').forEach((img) => {
+    img.loading = 'lazy';
+    img.decoding = 'async';
+  });
+  return doc.body.innerHTML;
+}
+
+function repoUrl(readmeUrl) {
+  const match = readmeUrl.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\//);
+  return match ? `https://github.com/${match[1]}/${match[2]}` : null;
+}
+
 export default async function projectDetail({ slug }) {
   try {
     const [projects, marked] = await Promise.all([
@@ -69,6 +75,9 @@ export default async function projectDetail({ slug }) {
     let htmlContent = marked ? marked.parse(textData) : textData;
     htmlContent = stripLeadingHeading(htmlContent);
     htmlContent = fixRelativeUrls(htmlContent, project.readmeUrl);
+    htmlContent = decorateImages(htmlContent);
+
+    const github = repoUrl(project.readmeUrl);
 
     return `
       <div class="view-project-detail wrap">
@@ -81,6 +90,7 @@ export default async function projectDetail({ slug }) {
         <div class="readme-content">${htmlContent}</div>
         <div class="project-detail__footer">
           <a href="#projects" class="btn-pill ltn">&larr; Back to Projects</a>
+          ${github ? `<a href="${github}" class="btn-pill" target="_blank" rel="noopener noreferrer">View on GitHub<span class="sr-only"> (opens in new tab)</span></a>` : ''}
         </div>
       </div>
     `;

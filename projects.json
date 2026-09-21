@@ -3,7 +3,9 @@
     "id": 1,
     "slug": "iot-ventilation-system",
     "title": "IoT Ventilation System",
-    "image": "",
+    "image": "images/one.gif",
+    "imageWidth": 540,
+    "imageHeight": 405,
     "description": "A smart system to control air pressure and quality.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
   },
@@ -11,7 +13,9 @@
     "id": 2,
     "slug": "portfolio",
     "title": "This personal Portfolio",
-    "image": "",
+    "image": "images/two.gif",
+    "imageWidth": 800,
+    "imageHeight": 600,
     "description": "A responsive, single-page portfolio built with vanilla JavaScript.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/itsmusa.github.io/main/README.md"
   },
@@ -19,7 +23,9 @@
     "id": 3,
     "slug": "rl-mppt-hil-validation",
     "title": "Reinforcement Learning MPPT HIL-Validation",
-    "image": "",
+    "image": "images/three.gif",
+    "imageWidth": 700,
+    "imageHeight": 700,
     "description": "Partial shading reduces photovoltaic array output by up to 60% when conventional maximum power point tracking (MPPT) algorithms converge on local maxima rather than the global maximum power point (GMPP). This repository implements a dual Q-learning MPPT agent trained system-agnostically across randomised panel configurations, irradiance patterns, and temperatures, targeting embedded deployment on the STM32F411 microcontroller (512 KB flash). The system is validated against Incremental Conductance (INC), Perturb and Observe (P&O), and Deep Q-Network (DQN) baselines using multi-seed statistical testing with toolbox-free paired t-tests and Wilcoxon signed-rank tests.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/Reinforcement-Learning-MPPT-HIL-Validation/refs/heads/master/README.md"
   },
@@ -27,7 +33,9 @@
     "id": 4,
     "slug": "news-homepage",
     "title": "Frontend Mentor - News homepage solution",
-    "image": "",
+    "image": "images/four.gif",
+    "imageWidth": 1536,
+    "imageHeight": 2048,
     "description": "This is a solution to the News homepage challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/News-homepage/refs/heads/main/README.md"
   }

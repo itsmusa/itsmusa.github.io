@@ -17,7 +17,7 @@ export default function info() {
         <div class="skills__grid">
           <div class="skill-card">
             <div class="skill-card__header">
-              <div class="skill-card__icon skill-card__icon--black">E</div>
+              <div class="skill-card__icon skill-card__icon--black" aria-hidden="true">E</div>
               <h3 class="skill-card__title">Engineering</h3>
             </div>
             <ul class="skill-card__chips">
@@ -30,7 +30,7 @@ export default function info() {
 
           <div class="skill-card">
             <div class="skill-card__header">
-              <div class="skill-card__icon skill-card__icon--zinc">D</div>
+              <div class="skill-card__icon skill-card__icon--zinc" aria-hidden="true">D</div>
               <h3 class="skill-card__title">Design</h3>
             </div>
             <ul class="skill-card__chips">
@@ -43,7 +43,7 @@ export default function info() {
 
           <div class="skill-card">
             <div class="skill-card__header">
-              <div class="skill-card__icon skill-card__icon--gray">T</div>
+              <div class="skill-card__icon skill-card__icon--gray" aria-hidden="true">T</div>
               <h3 class="skill-card__title">Tools</h3>
             </div>
             <ul class="skill-card__chips">

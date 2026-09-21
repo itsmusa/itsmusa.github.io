@@ -1,13 +1,4 @@
-const thumbs = [
-  'images/thumb-1.jpg',
-  'images/thumb-2.jpg',
-  'images/thumb-3.jpg',
-  'images/thumb-4.jpg',
-];
-
-function pickThumb() {
-  return thumbs[Math.floor(Math.random() * thumbs.length)];
-}
+import { getProjects } from '../js/data.js';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -19,9 +10,12 @@ function shuffle(arr) {
 }
 
 function projectCard(p) {
+  const image = p.image
+    ? `<img src="${p.image}" class="project__image" alt="" width="${p.imageWidth}" height="${p.imageHeight}" loading="lazy" decoding="async">`
+    : '';
   return `
-    <a href="#project/${p.slug}" class="project__card">
-      <img src="${pickThumb()}" class="project__image" alt="${p.title}" width="400" height="400" loading="lazy">
+    <a href="#project/${p.slug}" class="project__card" aria-label="View ${p.title}">
+      ${image}
       <p class="project__title">${p.title}</p>
       <p class="project__description">${p.description}</p>
     </a>
@@ -30,8 +24,7 @@ function projectCard(p) {
 
 export default async function home() {
   try {
-    const response = await fetch('projects.json');
-    const projects = await response.json();
+    const projects = await getProjects();
 
     const cards = shuffle(projects).slice(0, 2).map(projectCard).join('');
 

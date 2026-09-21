@@ -8,11 +8,11 @@ export default function contact() {
 
       <ul class="contact-list" data-reveal data-reveal-delay="80">
         <li class="contact-item">
-          <p class="contact-title">Github</p>
-          <a href="https://github.com/itsmusa" class="contact-desc" target="_blank" rel="noopener noreferrer">Github/itsmusa</a>
+          <h2 class="contact-title">GitHub</h2>
+          <a href="https://github.com/itsmusa" class="contact-desc" target="_blank" rel="noopener noreferrer">GitHub/itsmusa</a>
         </li>
         <li class="contact-item">
-          <p class="contact-title">LinkedIn</p>
+          <h2 class="contact-title">LinkedIn</h2>
           <a href="https://www.linkedin.com/in/musamagwaza23/" class="contact-desc" target="_blank" rel="noopener noreferrer">in/musamagwaza23</a>
         </li>
       </ul>

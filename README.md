@@ -10,7 +10,7 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 
 - Single-page application with hash-based routing
 - Skeleton loaders and scroll-reveal animations
-- Lazy-loaded images and async markdown rendering
+- Native lazy loading and async markdown rendering
 - Fully responsive across all screen sizes
 - Accessible (keyboard navigation, focus management, reduced motion support)
 
@@ -31,6 +31,7 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 │   └── styles.css
 ├── js/
 │   ├── app.js
+│   ├── data.js
 │   └── router.js
 ├── views/
 │   ├── home.js

@@ -1,7 +1,8 @@
+import { getProjects } from '../js/data.js';
+
 export default async function projects() {
   try {
-    const response = await fetch('projects.json');
-    const data = await response.json();
+    const data = await getProjects();
 
     const listHtml = data
       .map(
