@@ -201,9 +201,9 @@ h3 {
   justify-content: center;
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 640px) {
   .openMenu {
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -232,13 +232,13 @@ h3 {
   right: 1.5rem;
 }
 
-@media screen and (min-width: 420px) {
-  .nav__menu .closeMenu {
-    visibility: hidden;
+@media screen and (min-width: 640px) {
+  .nav__menu .nav__menuClose {
+    display: none;
   }
 }
 
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 640px) {
   .nav__menu {
     position: relative;
     width: fit-content;

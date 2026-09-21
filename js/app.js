@@ -100,7 +100,7 @@ const navMenu = document.getElementById('navMenu');
 
 /* Below this width the menu is an overlay and must be hidden from focus and
    assistive tech while closed. Above it, the menu is always available. */
-const mobileMenuQuery = window.matchMedia('(max-width: 419.98px)');
+const mobileMenuQuery = window.matchMedia('(max-width: 639.98px)');
 
 function syncMenuInert() {
   if (mobileMenuQuery.matches && !navMenu.classList.contains('open')) {
