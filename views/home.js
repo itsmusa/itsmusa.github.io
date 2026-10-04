@@ -1,4 +1,5 @@
 import { getProjects } from '../js/data.js';
+import { escapeHtml } from '../js/util.js';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -10,14 +11,17 @@ function shuffle(arr) {
 }
 
 function projectCard(p) {
+  const dims = p.imageWidth && p.imageHeight
+    ? ` width="${p.imageWidth}" height="${p.imageHeight}"`
+    : '';
   const image = p.image
-    ? `<img src="${p.image}" class="project__image" alt="" width="${p.imageWidth}" height="${p.imageHeight}" loading="lazy" decoding="async">`
+    ? `<img src="${escapeHtml(p.image)}" class="project__image" alt=""${dims} loading="lazy" decoding="async">`
     : '';
   return `
-    <a href="#project/${p.slug}" class="project__card" aria-label="View ${p.title}">
+    <a href="#project/${encodeURIComponent(p.slug)}" class="project__card" aria-label="View ${escapeHtml(p.title)}">
       ${image}
-      <p class="project__title">${p.title}</p>
-      <p class="project__description">${p.description}</p>
+      <p class="project__title">${escapeHtml(p.title)}</p>
+      <p class="project__description">${escapeHtml(p.description)}</p>
     </a>
   `;
 }
@@ -32,9 +36,9 @@ export default async function home() {
       <div class="view-home">
         <section class="intro wrap" data-reveal>
           <h1>Hi, my name is Msawenkosi</h1>
-          <h3>Electronics, embedded software, and a habit of finishing what I start.</h3>
+          <h3 data-balance>Electronics, embedded software, and a habit of finishing what I start.</h3>
           <p>I am drawn to the moment an idea stops being abstract and starts working. My BEngTech in Electronics and Computer Engineering was built around that moment, and every competition since has pushed me toward a harder version of it.</p>
-          <a href="#info" class="btn-pill">More Information <span class="arrow">&rarr;</span></a>
+          <a href="#info" class="btn-pill" data-measure-pill>More Information <span class="arrow">&rarr;</span></a>
         </section>
 
         <section class="projects wrap" data-reveal data-reveal-delay="80">
@@ -42,7 +46,7 @@ export default async function home() {
           <div class="projects__list">
             ${cards}
           </div>
-          <a href="#projects" class="btn-pill">More projects <span class="arrow">&rarr;</span></a>
+          <a href="#projects" class="btn-pill" data-measure-pill>More projects <span class="arrow">&rarr;</span></a>
         </section>
 
         <section class="achievements wrap" data-reveal data-reveal-delay="160">

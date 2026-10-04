@@ -4,6 +4,7 @@ import projectDetail from '../views/project-detail.js';
 import contact from '../views/contact.js';
 import info from '../views/info.js';
 import notFound from '../views/404.js';
+import { getMeasuredSkeleton } from './skeleton.js';
 
 const SITE_NAME = 'Msawenkosi Magwaza';
 
@@ -41,6 +42,8 @@ const skeletons = {
 };
 
 function getSkeletonHTML(hash) {
+  const measured = getMeasuredSkeleton(hash);
+  if (measured) return measured;
   if (skeletons[hash]) return skeletons[hash];
   if (hash.startsWith('#project/')) return skeletons['#project'];
   return `

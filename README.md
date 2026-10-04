@@ -32,7 +32,14 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 ├── js/
 │   ├── app.js
 │   ├── data.js
-│   └── router.js
+│   ├── markdown.js
+│   ├── measure.js
+│   ├── readme.js
+│   ├── router.js
+│   ├── skeleton.js
+│   ├── util.js
+│   └── vendor/
+│       └── pretext/
 ├── views/
 │   ├── home.js
 │   ├── info.js

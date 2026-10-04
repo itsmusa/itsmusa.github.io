@@ -1,4 +1,5 @@
 import { getProjects } from '../js/data.js';
+import { escapeHtml } from '../js/util.js';
 
 export default async function projects() {
   try {
@@ -8,9 +9,9 @@ export default async function projects() {
       .map(
         (project) => `
       <div class="project-item" data-reveal>
-        <h3 class="project__title">${project.title}</h3>
-        <p class="project__description">${project.description}</p>
-        <a href="#project/${project.slug}" class="btn-pill ltn">
+        <h3 class="project__title">${escapeHtml(project.title)}</h3>
+        <p class="project__description">${escapeHtml(project.description)}</p>
+        <a href="#project/${encodeURIComponent(project.slug)}" class="btn-pill ltn">
           View Details <span class="arrow">&rarr;</span>
         </a>
       </div>

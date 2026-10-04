@@ -1,4 +1,14 @@
 import { router } from './router.js';
+import {
+  initMeasurement,
+  isMeasurementEnabled,
+  balanceElement,
+  equalizeChips,
+  sizePills,
+  resetMeasurements,
+  releaseMeasurements,
+} from './measure.js';
+import { learnRouteSkeleton, clearSkeletonCache } from './skeleton.js';
 
 /* ==========================================================================
    INTERSECTION OBSERVER — Scroll Reveal
@@ -65,6 +75,27 @@ function initLazyImages() {
   );
 
   images.forEach((img) => imageObserver.observe(img));
+}
+
+/* ==========================================================================
+   README IMAGE FALLBACK — raw.githubusercontent to jsDelivr
+   Project READMEs are rendered to HTML, so an image that fails on the raw
+   host (blocked networks, rate limits) retries once against jsDelivr.
+   ======================================================================== */
+function initReadmeImageFallback() {
+  const images = document.querySelectorAll('.readme-content img[data-fallback]');
+
+  images.forEach((img) => {
+    if (img.dataset.fallbackApplied === 'true') return;
+    img.dataset.fallbackApplied = 'true';
+
+    img.addEventListener('error', () => {
+      const fallback = img.dataset.fallback;
+      if (!fallback) return;
+      img.removeAttribute('data-fallback');
+      img.src = fallback;
+    });
+  });
 }
 
 /* ==========================================================================
@@ -170,13 +201,89 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ==========================================================================
+   PRETEXT MEASUREMENT
+   Progressive enhancement only. Every pass below is gated on a successful
+   font calibration, and a failure simply leaves the CSS layout untouched.
+   ========================================================================== */
+function safely(fn) {
+  return (...args) => Promise.resolve()
+    .then(() => fn(...args))
+    .catch(() => {});
+}
+
+const runBalance = safely(balanceElement);
+const runChips = safely(equalizeChips);
+const runPills = safely(sizePills);
+const runSkeleton = safely(learnRouteSkeleton);
+
+function enhanceRoute() {
+  if (!isMeasurementEnabled()) return;
+
+  resetMeasurements();
+  document.querySelectorAll('[data-balance]').forEach((el) => runBalance(el));
+  document.querySelectorAll('.skill-card__chips').forEach((list) => runChips(list));
+  runPills(document);
+}
+
+/* ==========================================================================
    PUBLIC API — View hooks
    Called after every route render to wire up observers on new DOM.
    ======================================================================== */
 window.onRouteReady = () => {
   initScrollReveal();
   initLazyImages();
+  initReadmeImageFallback();
+  enhanceRoute();
+  runSkeleton(window.location.hash);
 };
+
+/* ==========================================================================
+   MEASUREMENT LIFECYCLE — fonts and viewport changes invalidate every
+   cached measurement, so recalibrate and re-measure the current route.
+   ======================================================================== */
+function invalidateMeasurements() {
+  if (!isMeasurementEnabled()) return;
+  resetMeasurements();
+  releaseMeasurements();
+  clearSkeletonCache();
+  enhanceRoute();
+  runSkeleton(window.location.hash);
+}
+
+let resizeTimer = null;
+
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(invalidateMeasurements, 200);
+});
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => {
+    releaseMeasurements();
+    invalidateMeasurements();
+  });
+}
+
+/* Calibration is asynchronous, so the first route may already be on screen
+   before measurements are trustworthy. Re-run the passes once they are. */
+initMeasurement()
+  .then((enabled) => {
+    if (!enabled) return;
+    enhanceRoute();
+    runSkeleton(window.location.hash);
+  })
+  .catch(() => {});
+
+/* ==========================================================================
+   RETRY — Re-runs the current route after a failed README load
+   ======================================================================== */
+document.addEventListener('click', (event) => {
+  const trigger = event.target.closest?.('[data-action="retry"]');
+  if (!trigger) return;
+
+  event.preventDefault();
+  router();
+});
 
 /* ==========================================================================
    ROUTING
