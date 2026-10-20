@@ -10,6 +10,7 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 
 - Single-page application with hash-based routing
 - Skeleton loaders and scroll-reveal animations
+- ASCII ocean background with live sharks (404 page)
 - Native lazy loading and async markdown rendering
 - Fully responsive across all screen sizes
 - Accessible (keyboard navigation, focus management, reduced motion support)
@@ -34,12 +35,14 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 │   ├── data.js
 │   ├── markdown.js
 │   ├── measure.js
+│   ├── ocean.js
 │   ├── readme.js
 │   ├── router.js
 │   ├── skeleton.js
 │   ├── util.js
 │   └── vendor/
-│       └── pretext/
+│       ├── pretext/
+│       └── ascii-sharks/
 ├── views/
 │   ├── home.js
 │   ├── info.js
@@ -58,6 +61,10 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 
 - **GitHub:** [itsmusa](https://github.com/itsmusa)
 - **LinkedIn:** [musamagwaza23](https://www.linkedin.com/in/musamagwaza23/)
+
+## Credits
+
+- The 404 page ASCII ocean is [ascii-sharks](https://github.com/stackedlol/ascii-sharks) by [stackedlol](https://github.com/stackedlol), vendored and transpiled to plain JavaScript.
 
 ## License
 

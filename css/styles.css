@@ -443,6 +443,37 @@ h3 {
 }
 
 /* ==========================================================================
+   OCEAN — full-viewport ASCII background (home + 404)
+   ========================================================================== */
+.ocean-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  /* The engine paints a black ocean; inverting it drops the sharks into the
+     light theme as dark ink. Hue-rotate keeps the accent colours true. */
+  background: #000;
+  filter: invert(1) hue-rotate(180deg);
+  /* The engine reads the computed font family to draw its glyphs. */
+  font-family: ui-monospace, "Cascadia Mono", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+/* A browser without CSS filters just loses the ocean — never a black screen. */
+@supports not (filter: invert(1)) {
+  .ocean-canvas {
+    display: none;
+  }
+}
+
+/* Subtle white halo so dark text stays readable when a dark shark passes under it. */
+.view-404 {
+  text-shadow:
+    0 0 6px rgba(252, 252, 252, 0.85),
+    0 0 14px rgba(252, 252, 252, 0.6);
+}
+
+/* ==========================================================================
    HOME — PROJECTS
    ========================================================================== */
 .projects {

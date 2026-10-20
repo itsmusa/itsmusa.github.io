@@ -9,6 +9,7 @@ import {
   releaseMeasurements,
 } from './measure.js';
 import { learnRouteSkeleton, clearSkeletonCache } from './skeleton.js';
+import { mountOcean, unmountOcean } from './ocean.js';
 
 /* ==========================================================================
    INTERSECTION OBSERVER — Scroll Reveal
@@ -229,12 +230,15 @@ function enhanceRoute() {
    PUBLIC API — View hooks
    Called after every route render to wire up observers on new DOM.
    ======================================================================== */
+window.onRouteTeardown = unmountOcean;
+
 window.onRouteReady = () => {
   initScrollReveal();
   initLazyImages();
   initReadmeImageFallback();
   enhanceRoute();
   runSkeleton(window.location.hash);
+  mountOcean();
 };
 
 /* ==========================================================================

@@ -109,6 +109,7 @@ export async function router() {
 
   await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
+  if (typeof window.onRouteTeardown === 'function') window.onRouteTeardown();
   appContainer.innerHTML = getSkeletonHTML(hash);
 
   const content = await viewFn(params);
