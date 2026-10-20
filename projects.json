@@ -38,5 +38,15 @@
     "imageHeight": 683,
     "description": "This is a solution to the News homepage challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/News-homepage/refs/heads/main/README.md"
+  },
+  {
+    "id": 5,
+    "slug": "open-rag",
+    "title": "Open RAG From Scratch",
+    "image": "images/open-rag.png",
+    "imageWidth": 784,
+    "imageHeight": 736,
+    "description": "Build a retrieval-augmented generation system from scratch with open, self-hostable tools — indexing, retrieval, and generation running entirely on your own machine.",
+    "readmeUrl": "https://raw.githubusercontent.com/itsmusa/open-rag/master/README.md"
   }
 ]
