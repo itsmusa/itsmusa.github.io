@@ -28,6 +28,7 @@ A minimal, single-page portfolio built with vanilla JavaScript. Designed to show
 ```
 .
 ├── index.html
+├── 404.html
 ├── css/
 │   └── styles.css
 ├── js/
