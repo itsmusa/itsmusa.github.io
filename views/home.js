@@ -57,7 +57,7 @@ export default async function home() {
           <ul class="achievements__list">
             <li class="achievement__item">
               <p class="achievement__title">Winner - SITA GovTech 2026 Hackathon</p>
-              <p class="achievement__date">September, 2026</p>
+              <p class="achievement__date">21 September, 2026</p>
             </li>
             <li class="achievement__item">
               <p class="achievement__title">Winner - 2026 TCS Sustainathon South Africa</p>
