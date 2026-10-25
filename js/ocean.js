@@ -26,7 +26,8 @@ export async function mountOcean() {
     if (id !== mountId || !canvas.isConnected || !isOceanRoute()) return;
     canvas.style.display = '';
     engine = new OceanEngine(canvas);
-  } catch {
+  } catch (error) {
+    console.error('Ocean engine failed to start:', error);
     if (id === mountId) {
       canvas.style.display = 'none';
     }
