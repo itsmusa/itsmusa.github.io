@@ -123,7 +123,7 @@ export async function router() {
     : '';
 
   if (title === 'Home') {
-    document.title = `${SITE_NAME} — Electronics & Computer Engineer`;
+    document.title = `${SITE_NAME} — Electronic Engineer`;
     announce('Home page loaded');
   } else if (heading) {
     document.title = `${heading} — ${SITE_NAME}`;
