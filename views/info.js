@@ -4,7 +4,7 @@ export default function info() {
       <section class="info" data-reveal>
         <h1>Information</h1>
         <div class="line"></div>
-        <p>I work across electronics and software, with a BEngTech in Electronics and Computer Engineering from the Durban University of Technology. I have been taking things apart since I was young, and at some point I learned to put them back together better. I like problems that do not sit neatly in one field, and I am happiest building systems that mix hardware, code, and design.</p>
+        <p>I work across electronics and software, with a BEngTech in Electronic Engineering from the Durban University of Technology. I have been taking things apart since I was young, and at some point I learned to put them back together better. I like problems that do not sit neatly in one field, and I am happiest building systems that mix hardware, code, and design.</p>
         <p>I spent part of my studies tutoring at DUT, first in Computer Programming and later in Electronics Circuit Design 2B. Explaining technical ideas to other people sharpened how I think about them myself, and it taught me to be patient with problems that do not click the first time.</p>
         <p>In 2026 my team, Still Lazy Tech, won the national TCS Sustainathon South Africa, placing first out of 65 submissions from more than 40 institutions. I also won the Huawei topic at SATNAC 2025 and took a bronze medal at the 2025 BRICS Skills Competition.</p>
         <p>My first hackathon was the JCI Durban event, and we placed second. It was the first time I watched something I had helped build stand up against others, and I have been chasing that feeling since.</p>

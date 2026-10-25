@@ -40,7 +40,7 @@ export default async function home() {
         <section class="intro wrap" data-reveal>
           <h1>Hi, my name is Msawenkosi</h1>
           <h3 data-balance>Electronics, embedded software, and a habit of finishing what I start.</h3>
-          <p>I am drawn to the moment an idea stops being abstract and starts working. My BEngTech in Electronics and Computer Engineering was built around that moment, and every competition since has pushed me toward a harder version of it.</p>
+          <p>I am drawn to the moment an idea stops being abstract and starts working. My BEngTech in Electronic Engineering was built around that moment, and every competition since has pushed me toward a harder version of it.</p>
           <a href="#info" class="btn-pill" data-measure-pill>More Information <span class="arrow">&rarr;</span></a>
         </section>
 
