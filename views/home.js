@@ -56,6 +56,10 @@ export default async function home() {
           <h2>Recent Achievements</h2>
           <ul class="achievements__list">
             <li class="achievement__item">
+              <p class="achievement__title">Winner - SITA GovTech 2026 Hackathon</p>
+              <p class="achievement__date">September, 2026</p>
+            </li>
+            <li class="achievement__item">
               <p class="achievement__title">Winner - 2026 TCS Sustainathon South Africa</p>
               <p class="achievement__date">September, 2026</p>
             </li>
