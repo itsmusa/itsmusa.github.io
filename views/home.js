@@ -1,6 +1,14 @@
 import { getProjects } from '../js/data.js';
 import { escapeHtml } from '../js/util.js';
 
+/* Home cards always use the house GIFs — never images from projects.json. */
+const CARD_GIFS = [
+  { src: 'images/one.gif', width: 480, height: 360 },
+  { src: 'images/two.gif', width: 512, height: 384 },
+  { src: 'images/three.gif', width: 700, height: 700 },
+  { src: 'images/four.gif', width: 512, height: 683 },
+];
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -10,16 +18,11 @@ function shuffle(arr) {
   return a;
 }
 
-function projectCard(p) {
-  const dims = p.imageWidth && p.imageHeight
-    ? ` width="${p.imageWidth}" height="${p.imageHeight}"`
-    : '';
-  const image = p.image
-    ? `<img src="${escapeHtml(p.image)}" class="project__image" alt=""${dims} loading="lazy" decoding="async">`
-    : '';
+function projectCard(p, index) {
+  const gif = CARD_GIFS[(p.id ?? index) % CARD_GIFS.length];
   return `
     <a href="#project/${encodeURIComponent(p.slug)}" class="project__card" aria-label="View ${escapeHtml(p.title)}">
-      ${image}
+      <img src="${gif.src}" class="project__image" alt="" width="${gif.width}" height="${gif.height}" loading="lazy" decoding="async">
       <p class="project__title">${escapeHtml(p.title)}</p>
       <p class="project__description">${escapeHtml(p.description)}</p>
     </a>

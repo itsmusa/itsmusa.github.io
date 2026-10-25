@@ -3,9 +3,6 @@
     "id": 1,
     "slug": "iot-ventilation-system",
     "title": "IoT Ventilation System",
-    "image": "images/one.gif",
-    "imageWidth": 480,
-    "imageHeight": 360,
     "description": "A smart system to control air pressure and quality.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/main/README.md"
   },
@@ -13,9 +10,6 @@
     "id": 2,
     "slug": "portfolio",
     "title": "This personal Portfolio",
-    "image": "images/two.gif",
-    "imageWidth": 512,
-    "imageHeight": 384,
     "description": "A responsive, single-page portfolio built with vanilla JavaScript.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/itsmusa.github.io/main/README.md"
   },
@@ -23,9 +17,6 @@
     "id": 3,
     "slug": "rl-mppt-hil-validation",
     "title": "Reinforcement Learning MPPT HIL-Validation",
-    "image": "images/three.gif",
-    "imageWidth": 700,
-    "imageHeight": 700,
     "description": "Partial shading reduces photovoltaic array output by up to 60% when conventional maximum power point tracking (MPPT) algorithms converge on local maxima rather than the global maximum power point (GMPP). This repository implements a dual Q-learning MPPT agent trained system-agnostically across randomised panel configurations, irradiance patterns, and temperatures, targeting embedded deployment on the STM32F411 microcontroller (512 KB flash). The system is validated against Incremental Conductance (INC), Perturb and Observe (P&O), and Deep Q-Network (DQN) baselines using multi-seed statistical testing with toolbox-free paired t-tests and Wilcoxon signed-rank tests.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/Reinforcement-Learning-MPPT-HIL-Validation/refs/heads/master/README.md"
   },
@@ -33,9 +24,6 @@
     "id": 4,
     "slug": "news-homepage",
     "title": "Frontend Mentor - News homepage solution",
-    "image": "images/four.gif",
-    "imageWidth": 512,
-    "imageHeight": 683,
     "description": "This is a solution to the News homepage challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/News-homepage/refs/heads/main/README.md"
   },
@@ -43,9 +31,6 @@
     "id": 5,
     "slug": "open-rag",
     "title": "Open RAG From Scratch",
-    "image": "images/open-rag.png",
-    "imageWidth": 784,
-    "imageHeight": 736,
     "description": "Build a retrieval-augmented generation system from scratch with open, self-hostable tools — indexing, retrieval, and generation running entirely on your own machine.",
     "readmeUrl": "https://raw.githubusercontent.com/itsmusa/open-rag/master/README.md"
   }

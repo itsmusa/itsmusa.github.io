@@ -141,14 +141,7 @@ async function learnHome(root) {
   if (!projects || !projects.length) return null;
 
   const predicted = await predictHeights(projects, titleProbe, descProbe, contentWidth, 2);
-  const imageHeight = Math.max(
-    ...projects.map((project) =>
-      project.imageWidth && project.imageHeight
-        ? (contentWidth * project.imageHeight) / project.imageWidth
-        : 0
-    ),
-    imageRect ? imageRect.height : 0
-  );
+  const imageHeight = imageRect ? imageRect.height : 0;
 
   const titleWidth = Math.min(titleRect.width || contentWidth, contentWidth);
   const heights = [0, 1].map(() => ({
